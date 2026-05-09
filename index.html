@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <!--
-  Generated 2026-05-09 by Claude as a first draft of the BJG App privacy policy.
-  This document has NOT been reviewed by a lawyer. Owl Technology Solutions
-  should have qualified legal counsel review and revise this policy before
-  publishing it publicly or submitting the corresponding URL to the Google
-  Play Console / Apple App Store Connect.
-
-  Hosting plan: deploy this file as the root index of a public GitHub Pages
-  site. The expected URL is:
-      https://owltechnologysolutions.github.io/bjg-app-privacy/
-  (or wherever the user ultimately chooses to host it).
-
-  When the data flows described below change (for example, when Stripe is
-  actually wired in, or any new third-party SDK is added), this file AND the
-  Google Play Data Safety form AND the Apple App Privacy form must all be
-  updated to match.
+  Translated from `bjg-app-claude/docs/privacy-policy.md` on 2026-05-09.
+  Source of truth lives in this repo (`bjg-app-privacy`). The markdown in
+  `bjg-app-claude/docs/privacy-policy.md` has been reduced to a pointer.
+  Production hosting URL is set by BJG (likely `bluejeansgolf.com/privacy`);
+  this GitHub Pages URL is staging/preview.
+  TODO: remove DRAFT banner only after BJG's counsel approves.
 -->
-<!-- TODO: remove the DRAFT banner before publishing publicly -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BJG App - Privacy Policy</title>
+  <title>Golf Ranch App — Privacy Policy</title>
   <style>
     :root {
       --ink: #1a1a1a;
@@ -31,6 +21,11 @@
       --draft-bg: #fff3b0;
       --draft-border: #b88a00;
       --draft-ink: #5a4500;
+      --todo-bg: #fff3b0;
+      --todo-border: #b88a00;
+      --todo-ink: #5a4500;
+      --callout-bg: #fdf6e3;
+      --callout-border: #d9c89a;
     }
     * { box-sizing: border-box; }
     html, body {
@@ -95,6 +90,43 @@
       border-radius: 3px;
       font-size: 0.92em;
     }
+    .todo {
+      background: var(--todo-bg);
+      color: var(--todo-ink);
+      border: 1px dashed var(--todo-border);
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.95em;
+      white-space: normal;
+    }
+    .ots-disclaimer {
+      background: var(--callout-bg);
+      border-left: 4px solid var(--callout-border);
+      padding: 14px 18px;
+      margin: 16px 0 24px;
+      border-radius: 4px;
+      font-size: 0.97em;
+    }
+    .ots-disclaimer p { margin: 8px 0; }
+    .ots-disclaimer p:first-child { margin-top: 0; }
+    .ots-disclaimer p:last-child { margin-bottom: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.95em;
+    }
+    th, td {
+      border: 1px solid var(--rule);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f5f8fa;
+      font-weight: 600;
+    }
     .contact-block {
       background: #f5f8fa;
       border: 1px solid var(--rule);
@@ -115,204 +147,216 @@
       h1 { font-size: 24px; }
       h2 { font-size: 18px; }
       main { padding: 24px 16px 60px; }
+      table { font-size: 0.9em; }
+      th, td { padding: 6px 7px; }
     }
   </style>
 </head>
 <body>
 
   <div class="draft-banner" role="note" aria-label="Draft notice">
-    <span>DRAFT - pending legal review. This is a first draft generated for internal review and is not legal advice. Do not rely on it as final published policy.</span>
+    <span>DRAFT — pending BJG legal review. This is not legal advice. Do not rely on it as final published policy.</span>
   </div>
 
   <main>
-    <h1>BJG App - Privacy Policy</h1>
-    <p class="meta">Effective date: May 9, 2026<br>Last updated: May 9, 2026</p>
+    <h1>Golf Ranch App — Privacy Policy</h1>
+    <p class="meta">
+      <strong>Status:</strong> DRAFT — pending BJG legal review.<br>
+      <strong>Drafted by:</strong> Owl Technology Solutions (OTS) for BJG sign-off.<br>
+      <strong>Last updated:</strong> 2026-05-03.<br>
+      <strong>Effective date:</strong> <span class="todo">[BJG TO FILL IN — typically the App Store launch date]</span>.
+    </p>
 
-    <p>This Privacy Policy describes how <strong>Owl Technology Solutions</strong> ("we", "us", or "our") collects, uses, stores, shares, and protects information when you use the BJG App (the "App") on iOS or Android. By creating an account or otherwise using the App, you agree to the practices described below.</p>
-
-    <h2>1. Who we are and how to contact us</h2>
-    <p>The BJG App is developed and operated by Owl Technology Solutions. If you have any questions, requests, or complaints about this policy or your data, please contact us:</p>
-    <div class="contact-block">
-      <strong>Owl Technology Solutions</strong><br>
-      Privacy contact: Colin King<br>
-      Email: <a href="mailto:colin.king@owltechnologysolutions.org">colin.king@owltechnologysolutions.org</a>
+    <div class="ots-disclaimer" role="note" aria-label="Note for BJG legal">
+      <p><strong>For BJG legal — read first.</strong> OTS is not a law firm and has no one on the team with legal training. This document was drafted by engineers describing the app's actual data flows in plain language. <strong>It is not legal advice.</strong> OTS makes no representation that this draft complies with any law, regulation, or App Store / Play Store policy as written, and accepts no responsibility for the final wording, the legal sufficiency, or the regulatory compliance of the published policy. All final responsibility rests with BJG and BJG's counsel. Substitute, rewrite, or strike anything counsel prefers. Items flagged <code>[BJG TO FILL IN]</code> need either a factual answer from BJG or a legal-entity-name decision before publication. The ToS draft (<code>docs/terms-of-service.md</code>) is the companion document.</p>
+      <p>Once finalized, the policy will need to be hosted at a stable public URL (e.g. <code>bluejeansgolf.com/privacy</code>) — Apple App Store and Google Play both require an accessible link in the app listing. The same URL is referenced from inside the app on the "Help" / "About" surface.</p>
     </div>
-    <p>We aim to respond to all privacy inquiries within 30 days.</p>
 
-    <h2>2. Summary (plain English)</h2>
+    <h2>1. Who we are</h2>
+    <p>This app ("Golf Ranch App") is published by <span class="todo">[BJG TO FILL IN — registered legal entity, e.g. "Blue Jeans Golf, LLC"]</span> ("BJG", "we", "us"), located at <span class="todo">[BJG TO FILL IN — registered business address]</span>. BJG operates the "Golf Ranch" brand of driving ranges and is the data controller for the personal information described in this policy.</p>
+
+    <p>Questions, requests, or complaints about your data:</p>
     <ul>
-      <li>We collect the minimum we need to run the App: your email and password (used to sign in), and the golf-related data you create (rounds, scores, courses, etc.).</li>
-      <li>Authentication is handled by Supabase. Your password is hashed; we never see it in plain text.</li>
-      <li>The App collects anonymous usage telemetry to help us improve the product. Telemetry events are tied to a random per-session UUID, not to your identity.</li>
-      <li>We do <strong>not</strong> show ads. We do <strong>not</strong> sell your personal information. We do <strong>not</strong> use third-party advertising or analytics SDKs beyond the in-house telemetry described here.</li>
-      <li>The App does <strong>not</strong> access your location, camera, contacts, microphone, or push notifications.</li>
-      <li>You can request deletion of your account and associated data at any time (see Section 9).</li>
+      <li>Email: <span class="todo">[BJG TO FILL IN — e.g. <code>privacy@bluejeansgolf.com</code>]</span></li>
+      <li>Mail: <span class="todo">[BJG TO FILL IN — registered address, attn: Privacy]</span></li>
     </ul>
 
-    <h2>3. Data we collect</h2>
-    <p>We use the data categories defined in the Google Play Data Safety taxonomy where applicable.</p>
-
-    <h3>3.1 Personal info</h3>
+    <h2>2. What this policy covers</h2>
+    <p>This policy describes the personal information BJG collects through the Golf Ranch App (iOS and Android) and how we use it. It does not cover:</p>
     <ul>
-      <li><strong>Email address</strong> - used as your login identifier and to send essential account-related messages (for example, password reset emails).</li>
+      <li>Information BJG collects in person at a Golf Ranch site (front-desk membership records, point-of-sale purchases without the app).</li>
+      <li>Information collected by the BJG website, marketing emails, or other channels — those are governed by separate notices on the relevant property.</li>
+      <li>Third-party services we link to from the app — those have their own privacy policies, listed in §6 below.</li>
+    </ul>
+    <p>If you have a Ranch Pass and don't use the app, this policy doesn't apply to you; your membership data is governed by BJG's general member privacy notice.</p>
+
+    <h2>3. Information we collect</h2>
+
+    <h3>3.a Information you give us directly</h3>
+    <ul>
+      <li><strong>Email address.</strong> Used to create your account and authenticate you. We never see your password — authentication is handled by our third-party identity provider (Supabase), which stores only a hashed value.</li>
+      <li><strong>Home site selection.</strong> The Golf Ranch location you've chosen as your primary site. V1 supports Richardson only.</li>
     </ul>
 
-    <h3>3.2 Authentication info</h3>
+    <h3>3.b Information we receive from BJG's existing membership system</h3>
+    <p>When you sign in, the app verifies you are a current Ranch Pass member. To do this, we look up your email in BJG's existing membership data warehouse and read:</p>
     <ul>
-      <li><strong>Password</strong> - stored only in hashed form by our authentication provider, Supabase. Owl Technology Solutions never sees or stores your plain-text password.</li>
-      <li><strong>Session tokens (JWTs)</strong> and <strong>password-reset tokens</strong> - issued by Supabase to keep you signed in and to verify password resets. On your device, the active session is stored in the operating system's secure store (iOS Keychain on Apple devices; Android EncryptedSharedPreferences on Android devices) via Expo SecureStore. We use the PKCE OAuth flow for added security on mobile.</li>
+      <li>Your <strong>first and last name</strong> (as on your Ranch Pass membership).</li>
+      <li>Your <strong>membership status</strong> (active, lapsed).</li>
+      <li>Your <strong>member-since date</strong>.</li>
+    </ul>
+    <p>This data is sourced from BJG's existing membership system; no new collection happens at sign-up beyond the email and home site you provide.</p>
+
+    <h3>3.c Information generated by your use of the app</h3>
+    <ul>
+      <li><strong>Purchase history.</strong> When you buy a ball bucket through the app, we record the date, time, site, ball count, price paid, and a transaction identifier. This drives your loyalty stats, visit history, and tier progression.</li>
+      <li><strong>PIN issuance and redemption.</strong> When you purchase a bucket, the app obtains a one-time PIN code from SelectPi (the kiosk operator) so you can dispense balls. We record the PIN's issuance time, expiration, and whether it was redeemed at the kiosk.</li>
+      <li><strong>Loyalty stats.</strong> Aggregated counts derived from your purchases — total balls hit, savings versus walk-in pricing, weekly streak, and tier progress — calculated server-side and surfaced in the app's Stats tab.</li>
     </ul>
 
-    <h3>3.3 App activity (golf data you create)</h3>
+    <h3>3.d Information collected automatically</h3>
     <ul>
-      <li>Profile information you choose to enter.</li>
-      <li>Golf-related content you create or submit, such as rounds, scores, courses, and related notes.</li>
-      <li>Interactions with the App that produce records (for example, saving a round).</li>
+      <li><strong>Crash and error reports.</strong> If the app crashes or hits an unexpected error, we collect a stack trace and high-level device information (device model, OS version, app version) to diagnose the issue. We do not collect screenshots, keystrokes, or the contents of your data.</li>
+      <li><strong>Authentication events.</strong> Sign-in attempts, sign-outs, and password resets are logged for security and abuse-prevention purposes.</li>
+      <li><strong>Product analytics.</strong> We record events describing how you move through the app — for example, which step of the signup flow you reached, whether a purchase completed, whether a kiosk PIN was redeemed — along with high-level device information (platform, app version) and a randomly-generated anonymous session identifier stored on your device. This helps us identify where users get stuck, diagnose flow-level bugs, and prioritize improvements. We do not use third-party analytics or advertising SDKs; events are sent only to our own servers and may include error-message text from underlying services that, in rare cases, can incidentally reference your email. Analytics events are retained for thirteen months.</li>
     </ul>
 
-    <h3>3.4 App performance and product analytics (telemetry)</h3>
+    <h3>3.e What we do NOT collect</h3>
+    <p>The V1 app does not collect:</p>
     <ul>
-      <li>Anonymous-style event logs describing how the App is being used in aggregate (for example, which screens are opened, which features are used, basic error or crash signals).</li>
-      <li>Each telemetry session is tagged with a random session UUID generated on-device using <code>expo-crypto</code>. This UUID is not linked to your account, email, or any other identifier we hold.</li>
-      <li>We use telemetry strictly for product improvement and stability. We do not use it for advertising and we do not share it with advertising networks.</li>
+      <li>Card numbers, expiration dates, CVCs, or any other payment-card data. All payments are handled directly by Stripe; card details are entered into Stripe's payment sheet and never touch BJG or OTS systems. We see only an opaque payment identifier and a confirmation that the charge succeeded.</li>
+      <li>Your location (GPS, Wi-Fi, or otherwise). The app does not request location permissions.</li>
+      <li>Contact-list, photo-library, microphone, or camera data. The app does not request access to any of these.</li>
+      <li>Behavioral / advertising trackers. The app contains no third-party analytics SDKs or advertising SDKs.</li>
+      <li>Children's information. The app is intended for adult Ranch Pass members; we do not knowingly collect information from anyone under 13. If you believe a minor has created an account, contact us at the email above and we will remove it.</li>
     </ul>
 
-    <h3>3.5 Financial info (planned, not yet active in v1)</h3>
+    <h2>4. How we use your information</h2>
+    <p>We use your information to:</p>
     <ul>
-      <li>If and when paid features are introduced, payments will be processed by <strong>Stripe</strong>. Stripe collects and processes your card or other payment details directly. Owl Technology Solutions will <strong>not</strong> receive, see, or store your card number or full payment credentials at any time.</li>
-      <li>From Stripe we will store only: a Stripe customer ID, plus minimal receipt metadata (such as amount, currency, date, and product purchased) so we can show you your purchase history and provide support.</li>
-      <li>This section will be updated and the in-app disclosures refreshed before any paid functionality is enabled.</li>
+      <li><strong>Provide the service</strong> — authenticate you, verify your Ranch Pass membership, present member-priced bucket purchases, generate kiosk PINs, and keep an accurate record of your loyalty stats.</li>
+      <li><strong>Process payments</strong> — pass charge requests to Stripe, our payment processor.</li>
+      <li><strong>Detect and prevent abuse</strong> — rate-limit suspicious sign-in attempts, enforce one-active-pass-per-user, and investigate fraud or unauthorized use.</li>
+      <li><strong>Improve reliability</strong> — diagnose crashes and bugs.</li>
+      <li><strong>Comply with legal obligations</strong> — respond to lawful requests from law enforcement or regulators.</li>
+    </ul>
+    <p>We do not sell your personal information. We do not use your information for advertising purposes. We do not share your information with marketers.</p>
+
+    <h2>5. Legal basis for processing (EU/UK readers)</h2>
+    <p>Where the EU/UK General Data Protection Regulation applies, we rely on:</p>
+    <ul>
+      <li><strong>Performance of a contract</strong> — to provide the app's purchase, PIN, and stats functionality you signed up for.</li>
+      <li><strong>Legitimate interests</strong> — to detect abuse, diagnose errors, and run the service securely. These interests do not override your fundamental rights.</li>
+      <li><strong>Consent</strong> — for any future feature that explicitly asks for it (none in V1).</li>
+      <li><strong>Legal obligation</strong> — for tax, accounting, or law-enforcement compliance.</li>
     </ul>
 
-    <h3>3.6 Device or other IDs</h3>
+    <h2>6. Who we share your information with</h2>
+    <p>We share your information only with the third parties listed below, and only to the extent needed for them to perform their function. We have data-processing agreements (or equivalent contractual protections) in place with each.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Service provider</th>
+          <th>Purpose</th>
+          <th>What they receive</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Supabase</strong> (Supabase, Inc.)</td>
+          <td>Authentication and primary application database</td>
+          <td>Email, hashed password, profile fields, transaction records, loyalty stats</td>
+        </tr>
+        <tr>
+          <td><strong>Stripe</strong> (Stripe, Inc.)</td>
+          <td>Payment processing</td>
+          <td>Charge amount, transaction reference; card details go directly to Stripe and are never seen by BJG or OTS</td>
+        </tr>
+        <tr>
+          <td><strong>SelectPi</strong> (operator of the ball-dispensing kiosks)</td>
+          <td>PIN code issuance and redemption</td>
+          <td>Transaction ID, ball count, price, expiration window</td>
+        </tr>
+        <tr>
+          <td><strong>Snowflake</strong> + <strong>Airbyte</strong></td>
+          <td>BJG's existing data warehouse and the sync that mirrors membership data into the app database</td>
+          <td>Membership status, member-since date, name</td>
+        </tr>
+        <tr>
+          <td><strong>Sentry</strong> (Functional Software, Inc.)</td>
+          <td>Crash and error reporting</td>
+          <td>Stack traces, high-level device metadata</td>
+        </tr>
+        <tr>
+          <td><strong>AWS</strong> (Amazon Web Services, Inc.)</td>
+          <td>Cloud hosting infrastructure for the app's backend services</td>
+          <td>All app data, encrypted at rest and in transit</td>
+        </tr>
+        <tr>
+          <td><strong>HubSpot</strong> (HubSpot, Inc.)</td>
+          <td><span class="todo">[BJG TO FILL IN — pending D-2 decision: only included if BJG syncs app member data into HubSpot for marketing operations]</span></td>
+          <td>[If applicable: name, email, membership status, tier, aggregate spend]</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We do not share your information with any other third parties except as required by law (subpoenas, court orders) or to protect the rights, property, or safety of BJG, our users, or others.</p>
+
+    <h2>7. Where your data is stored</h2>
+    <p>Application data is stored in <span class="todo">[BJG TO FILL IN — based on Supabase region; OTS recommends <code>us-east-1</code> (Virginia, USA) per current architecture]</span>. By using the app, you consent to your data being processed in the United States, including by service providers operating there.</p>
+
+    <h2>8. How long we keep your data</h2>
     <ul>
-      <li>The random per-session telemetry UUID described in 3.4. We do not use the device advertising ID, IDFA, IDFV, Android Advertising ID, or any persistent hardware identifier.</li>
+      <li><strong>Account data</strong> (email, profile) — for as long as your account is active. If you delete your account, we delete or anonymize this data within 30 days, except where retention is required by law or for ongoing fraud-prevention review.</li>
+      <li><strong>Transaction history</strong> — retained for <span class="todo">[BJG TO FILL IN — typically 7 years for accounting and tax purposes in Texas]</span>.</li>
+      <li><strong>Crash and error logs</strong> — 90 days, then deleted.</li>
+      <li><strong>Authentication event logs</strong> — 90 days, then deleted.</li>
     </ul>
 
-    <h3>3.7 What we do NOT collect</h3>
+    <h2>9. Security</h2>
+    <p>We use industry-standard measures to protect your data:</p>
     <ul>
-      <li>Precise or approximate location.</li>
-      <li>Camera, photo library, or microphone data.</li>
-      <li>Contacts, calendar, or SMS data.</li>
-      <li>Health, fitness, or biometric data.</li>
-      <li>Push notification tokens (the App does not send push notifications in v1).</li>
-      <li>Advertising identifiers.</li>
+      <li>All traffic between the app and our servers is encrypted in transit (TLS 1.2+).</li>
+      <li>Data at rest is encrypted using AES-256.</li>
+      <li>Authentication tokens are stored in your device's secure keychain (iOS Keychain / Android EncryptedSharedPreferences), never in plain storage.</li>
+      <li>Passwords are hashed with bcrypt by our identity provider; we never see your password in plaintext.</li>
+      <li>Access to production data inside BJG and OTS is restricted to the engineers who need it, with audit logs on every access.</li>
     </ul>
+    <p>No system is perfectly secure; if a breach affecting your information ever occurs, we will notify you in line with applicable law.</p>
 
-    <h2>4. How we use your data</h2>
+    <h2>10. Your rights</h2>
+    <p>Depending on where you live, you may have some or all of the following rights regarding your personal information:</p>
     <ul>
-      <li><strong>To provide the App</strong> - authenticate you, save your golf data, and let you read it back from any device where you sign in.</li>
-      <li><strong>To secure your account</strong> - issue and verify session tokens, process password resets, and detect abusive activity.</li>
-      <li><strong>To support you</strong> - respond to questions or issues you send to our privacy contact.</li>
-      <li><strong>To improve the App</strong> - review aggregated, non-identifying telemetry to find bugs and prioritize features.</li>
-      <li><strong>To process payments</strong> (when paid features launch) - via Stripe, and to maintain a record of your purchases.</li>
-      <li><strong>To comply with the law</strong> - meet our legal obligations and enforce our terms.</li>
+      <li><strong>Access</strong> — get a copy of the data we hold about you.</li>
+      <li><strong>Correction</strong> — fix data that's wrong (most fields can be corrected through the app's Profile tab; for membership-system fields, contact BJG directly).</li>
+      <li><strong>Deletion</strong> — delete your account and associated data.</li>
+      <li><strong>Portability</strong> — receive a machine-readable export.</li>
+      <li><strong>Objection / restriction</strong> — object to certain processing or ask us to limit it.</li>
+      <li><strong>Withdraw consent</strong> — where we rely on consent (none in V1), withdraw it at any time.</li>
     </ul>
+    <p>To exercise any of these rights, email us at the address in §1. We respond within 30 days. We may need to verify your identity before acting on the request.</p>
+    <p>If you live in the EU/UK, you also have the right to lodge a complaint with your local data-protection authority (e.g. the UK ICO, Ireland's DPC).</p>
+    <p>If you live in California, the CCPA/CPRA gives you these same rights (under different names) and additionally the right not to be discriminated against for exercising them. We do not sell or share personal information for cross-context behavioral advertising.</p>
 
-    <h2>5. Who we share data with</h2>
-    <p>We do not sell your personal information and we do not share it with advertisers. We share data only with the service providers listed below, and only to the extent needed for them to perform a service for us:</p>
-
-    <h3>5.1 Supabase (authentication and identity)</h3>
-    <p>Supabase, Inc. (US-hosted) provides our authentication and identity service. Supabase stores your email, hashed password, and the session and password-reset tokens that Supabase issues. See the <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Supabase Privacy Policy</a> for details about how Supabase processes data.</p>
-
-    <h3>5.2 Owl Technology Solutions backend (Django API)</h3>
-    <p>Our application backend, operated by Owl Technology Solutions, stores your profile and your golf-related App data (rounds, scores, courses, and similar). Requests between the App and the backend are authenticated using your Supabase-issued JWT and are sent over HTTPS.</p>
-
-    <h3>5.3 Stripe (planned, not active in v1)</h3>
-    <p>When paid features are introduced, payments will be processed by Stripe, Inc. Stripe is a PCI-DSS Level 1 service provider and handles your full payment credentials directly. See the <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe Privacy Policy</a>.</p>
-
-    <h3>5.4 Legal and safety disclosures</h3>
-    <p>We may disclose information if we believe in good faith that disclosure is necessary to comply with a valid legal process (such as a subpoena or court order), to protect the safety of any person, to address fraud or security issues, or to enforce our terms of service.</p>
-
-    <h3>5.5 No advertising or third-party analytics SDKs</h3>
-    <p>Beyond the providers above, the App does not include any third-party advertising networks, third-party analytics SDKs, attribution SDKs, or data-broker integrations.</p>
-
-    <h2>6. How we secure your data</h2>
-    <ul>
-      <li><strong>In transit:</strong> all network requests between the App and our backend, between the App and Supabase, and between our backend and Supabase use HTTPS / TLS.</li>
-      <li><strong>At rest:</strong> passwords are stored only as salted hashes by Supabase. Account and golf data stored in our backend database is protected by encryption at rest provided by our hosting infrastructure.</li>
-      <li><strong>On your device:</strong> active sessions are stored in the operating system's hardware-backed secure store (iOS Keychain or Android EncryptedSharedPreferences) via Expo SecureStore.</li>
-      <li><strong>Access controls:</strong> access to production systems by Owl Technology Solutions personnel is limited to the people who need it to operate or support the App.</li>
-    </ul>
-    <p>No method of transmission or storage on the internet is 100% secure, and we cannot guarantee absolute security.</p>
-
-    <h2>7. Data retention</h2>
-    <ul>
-      <li><strong>Account data</strong> (email, profile, golf data) is retained for as long as your account is active.</li>
-      <li><strong>Authentication and session tokens</strong> expire automatically based on Supabase's standard token lifetimes; expired tokens are not retained.</li>
-      <li><strong>Telemetry events</strong> (which contain only a random session UUID) are retained for up to 13 months to allow year-over-year product comparison, then deleted or aggregated into non-identifying summaries.</li>
-      <li><strong>Receipt and Stripe customer ID metadata</strong> (once paid features launch) will be retained for at least the period required by applicable tax and accounting law (typically up to 7 years in the United States), even if you delete your account.</li>
-      <li>When you request deletion, we will remove your account-level data within 30 days, subject to the legal-retention exception above for financial records.</li>
-    </ul>
-
-    <h2>8. Your choices and rights</h2>
-    <p>You can:</p>
-    <ul>
-      <li>Update your profile information from inside the App.</li>
-      <li>Reset your password from the sign-in screen.</li>
-      <li>Request a copy of the personal data we hold about you, or request that we correct it.</li>
-      <li>Request that we delete your account and associated personal data (see Section 9).</li>
-    </ul>
-    <p>To exercise any of these rights, contact us at <a href="mailto:colin.king@owltechnologysolutions.org">colin.king@owltechnologysolutions.org</a>.</p>
-
-    <h2>9. Account and data deletion</h2>
-    <p>You can request deletion of your BJG App account and the personal data associated with it through any of the following channels:</p>
-    <ul>
-      <li><strong>In-app:</strong> open the App, go to Settings, and choose "Delete account". This initiates an account-deletion request.</li>
-      <li><strong>Public web request (no login required):</strong> visit our account-deletion request page or email the address below from the email you used to register. You do <em>not</em> need an account or to be signed in to make a deletion request. The current public deletion request URL is this Privacy Policy page; submit your request by emailing <a href="mailto:colin.king@owltechnologysolutions.org?subject=BJG%20App%20account%20deletion%20request">colin.king@owltechnologysolutions.org</a> with the subject line "BJG App account deletion request" and the email address associated with your account.</li>
-      <li><strong>Email fallback:</strong> emailing <a href="mailto:colin.king@owltechnologysolutions.org?subject=BJG%20App%20account%20deletion%20request">colin.king@owltechnologysolutions.org</a> with the subject line "BJG App account deletion request" will, on its own, trigger deletion of your account and associated personal data within 30 days of verification.</li>
-    </ul>
-    <p>What gets deleted: your profile, your authentication record at Supabase, the golf-related App data tied to your account, and any telemetry that is tied to your account (note: most telemetry is not tied to your account at all and is already anonymous).</p>
-    <p>What we may retain after deletion (and why):</p>
-    <ul>
-      <li>Aggregated or de-identified analytics that can no longer be linked to you.</li>
-      <li>Records we are legally required to keep, such as financial and tax records associated with completed purchases (typically up to 7 years).</li>
-      <li>Information necessary to detect, investigate, or prevent fraud, abuse, or security incidents.</li>
-    </ul>
-
-    <h2>10. Children's privacy</h2>
-    <p>The BJG App is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If you are a parent or guardian and you believe a child under 13 has provided us with personal information, please contact us at <a href="mailto:colin.king@owltechnologysolutions.org">colin.king@owltechnologysolutions.org</a> and we will delete that information. This policy is intended to comply with the U.S. Children's Online Privacy Protection Act (COPPA).</p>
-
-    <h2>11. International users</h2>
-    <p>The App is operated from the United States, and data we collect is processed and stored on servers located in the United States. If you are accessing the App from outside the United States, please be aware that your information may be transferred to, stored in, and processed in the United States.</p>
-
-    <h3>11.1 Notice for users in the European Economic Area, the United Kingdom, and Switzerland (GDPR / UK GDPR)</h3>
-    <p>If you are in the EEA, the UK, or Switzerland, the General Data Protection Regulation (or its UK equivalent) gives you certain rights with respect to your personal data.</p>
-    <p><strong>Legal bases we rely on:</strong></p>
-    <ul>
-      <li><strong>Performance of a contract</strong> - to create and operate your account, store your golf data, and deliver the App's core functionality.</li>
-      <li><strong>Legitimate interests</strong> - to keep the App secure, debug problems, and improve the product through aggregated telemetry. These interests are balanced against your privacy rights.</li>
-      <li><strong>Consent</strong> - where required for any optional processing. You can withdraw consent at any time, without affecting processing carried out before withdrawal.</li>
-      <li><strong>Legal obligation</strong> - where we must retain or disclose data to comply with the law.</li>
-    </ul>
-    <p><strong>Your rights:</strong> access, rectification, erasure ("right to be forgotten"), restriction of processing, objection to processing, and data portability. To exercise any of these rights, email <a href="mailto:colin.king@owltechnologysolutions.org">colin.king@owltechnologysolutions.org</a>. You also have the right to lodge a complaint with your local data protection supervisory authority.</p>
-
-    <h3>11.2 Notice for California residents (CCPA / CPRA)</h3>
-    <p>If you are a California resident, the California Consumer Privacy Act, as amended by the California Privacy Rights Act, gives you the right to:</p>
-    <ul>
-      <li><strong>Know</strong> what personal information we collect about you, where we got it, why we use it, and who we share it with (this Privacy Policy provides that information).</li>
-      <li><strong>Delete</strong> your personal information, subject to certain legal exceptions (see Section 9).</li>
-      <li><strong>Correct</strong> inaccurate personal information we hold about you.</li>
-      <li><strong>Opt out of "sale" or "sharing" of personal information</strong> for cross-context behavioral advertising. We do not sell or share your personal information for these purposes, so there is nothing to opt out of.</li>
-      <li><strong>Non-discrimination</strong> - we will not discriminate against you for exercising any of these rights.</li>
-    </ul>
-    <p>To make a CCPA / CPRA request, email <a href="mailto:colin.king@owltechnologysolutions.org">colin.king@owltechnologysolutions.org</a>. We may need to verify your identity before fulfilling the request.</p>
+    <h2>11. Children</h2>
+    <p>The app is intended for adult Ranch Pass members. We do not knowingly collect personal information from anyone under 13. If you believe a child under 13 has created an account, contact us and we will delete it.</p>
 
     <h2>12. Changes to this policy</h2>
-    <p>We may update this Privacy Policy from time to time, for example when we add a feature, change a service provider, or are required to do so by law. When we make a material change, we will:</p>
-    <ul>
-      <li>Update the "Last updated" date at the top of this page.</li>
-      <li>Post the revised policy at this URL, replacing the prior version.</li>
-      <li>For material changes, provide additional notice in the App or by email to the address associated with your account, where reasonably practicable.</li>
-    </ul>
-    <p>We encourage you to review this page periodically. Your continued use of the App after a change to this policy constitutes acceptance of the updated policy.</p>
+    <p>If we make material changes to this policy, we'll notify you in the app and update the "Last updated" date at the top. Continuing to use the app after a change means you accept the updated policy. The previous version of this policy is available on request.</p>
 
-    <h2>13. Questions</h2>
-    <p>If anything in this policy is unclear, or you would like to exercise a privacy right, please email <a href="mailto:colin.king@owltechnologysolutions.org">colin.king@owltechnologysolutions.org</a>. We are happy to help.</p>
+    <h2>13. Contact</h2>
+    <p>[Repeated from §1 for findability]</p>
+    <div class="contact-block">
+      <ul>
+        <li>Email: <span class="todo">[BJG TO FILL IN]</span></li>
+        <li>Mail: <span class="todo">[BJG TO FILL IN]</span></li>
+      </ul>
+    </div>
   </main>
 
   <footer>
-    Owl Technology Solutions - BJG App - Privacy Policy - May 9, 2026
+    Golf Ranch App — Privacy Policy — DRAFT, last updated 2026-05-03
   </footer>
 
 </body>
