@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!--
-  Translated from `bjg-app-claude/docs/privacy-policy.md` on 2026-05-09.
-  Source of truth lives in this repo (`bjg-app-privacy`).
+  Regenerated from `bjg-app-claude/docs/privacy-policy.md` on 2026-06-02.
+  The markdown there is the working draft source; this file is the published
+  (public-facing) rendering. Keep the two in sync — do not let them diverge.
+  The OTS-internal "For BJG legal" callout and the App Store / Play appendix
+  in the markdown are intentionally NOT published here.
 -->
 <html lang="en">
 <head>
@@ -150,20 +153,22 @@
 </head>
 <body>
 
+  <div class="draft-banner"><span>DRAFT — pending BJG legal review. This page is a staging preview and is not the production privacy-policy URL.</span></div>
+
   <main>
     <h1>Golf Ranch App — Privacy Policy</h1>
     <p class="meta">
-      <strong>Last updated:</strong> 2026-05-03.<br>
-      <strong>Effective date:</strong> 06/01/2026.
+      <strong>Last updated:</strong> 2026-06-02.<br>
+      <strong>Effective date:</strong> 2026-06-08.
     </p>
 
     <h2>1. Who we are</h2>
-    <p>This app ("Golf Ranch App") is published by Blue Jeans Golf, LLC ("BJG", "we", "us"), located at 3333 Lee Parkway, Suite 460, Dallas, TX 75219, USA. BJG operates the "Golf Ranch" brand of driving ranges and is the data controller for the personal information described in this policy.</p>
+    <p>This app ("Golf Ranch App") is published by Blue Jeans Golf LLC ("BJG", "we", "us"), located at 633 West Davis Street, Dallas, TX 75208. BJG operates the "Golf Ranch" brand of driving ranges and is the data controller for the personal information described in this policy.</p>
 
     <p>Questions, requests, or complaints about your data:</p>
     <ul>
-      <li>Email: appsupport@golfranch.com</li>
-      <li>Mail: 3333 Lee Parkway, Suite 460, Dallas, TX 75219, USA</li>
+      <li>Email: accounts@golfranchusa.com</li>
+      <li>Mail: 633 West Davis Street, Dallas, TX 75208</li>
     </ul>
 
     <h2>2. What this policy covers</h2>
@@ -171,7 +176,7 @@
     <ul>
       <li>Information BJG collects in person at a Golf Ranch site (front-desk membership records, point-of-sale purchases without the app).</li>
       <li>Information collected by the BJG website, marketing emails, or other channels — those are governed by separate notices on the relevant property.</li>
-      <li>Third-party services we link to from the app — those have their own privacy policies, listed in §6 below.</li>
+      <li>Third-party services we link to from the app — those have their own privacy policies, listed in §5 below.</li>
     </ul>
     <p>If you have a Ranch Pass and don't use the app, this policy doesn't apply to you; your membership data is governed by BJG's general member privacy notice.</p>
 
@@ -197,13 +202,14 @@
       <li><strong>Purchase history.</strong> When you buy a ball bucket through the app, we record the date, time, site, ball count, price paid, and a transaction identifier. This drives your loyalty stats, visit history, and tier progression.</li>
       <li><strong>PIN issuance and redemption.</strong> When you purchase a bucket, the app obtains a one-time PIN code from SelectPi (the kiosk operator) so you can dispense balls. We record the PIN's issuance time, expiration, and whether it was redeemed at the kiosk.</li>
       <li><strong>Loyalty stats.</strong> Aggregated counts derived from your purchases — total balls hit, savings versus walk-in pricing, weekly streak, and tier progress — calculated server-side and surfaced in the app's Stats tab.</li>
+      <li><strong>Payment reference.</strong> An opaque Stripe customer identifier we store on your account so repeat checkout can reuse a saved card. It is a reference into Stripe, not card data — we never see or store your card number.</li>
     </ul>
 
     <h3>3.d Information collected automatically</h3>
     <ul>
-      <li><strong>Crash and error reports.</strong> If the app crashes or hits an unexpected error, we collect a stack trace and high-level device information (device model, OS version, app version) to diagnose the issue. We do not collect screenshots, keystrokes, or the contents of your data.</li>
+      <li><strong>Error logs.</strong> When a request to our backend fails or hits an unexpected error, our servers record a diagnostic log entry (the error and a server-side stack trace) to diagnose the issue. The V1 app does not include a third-party client crash-reporting SDK. We do not collect screenshots, keystrokes, or the contents of your data.</li>
       <li><strong>Authentication events.</strong> Sign-in attempts, sign-outs, and password resets are logged for security and abuse-prevention purposes.</li>
-      <li><strong>Product analytics.</strong> We record events describing how you move through the app — for example, which step of the signup flow you reached, whether a purchase completed, whether a kiosk PIN was redeemed — along with high-level device information (platform, app version) and a randomly-generated anonymous session identifier stored on your device. This helps us identify where users get stuck, diagnose flow-level bugs, and prioritize improvements. We do not use third-party analytics or advertising SDKs; events are sent only to our own servers and may include error-message text from underlying services that, in rare cases, can incidentally reference your email. Analytics events are retained for thirteen months.</li>
+      <li><strong>Product analytics.</strong> We record events describing how you move through the app — for example, which step of the signup flow you reached, whether a purchase completed, whether a kiosk PIN was redeemed — along with high-level device information (platform, OS version, app version) and a randomly-generated anonymous session identifier stored on your device. This helps us identify where users get stuck, diagnose flow-level bugs, and prioritize improvements. We do not use third-party analytics or advertising SDKs; events are sent only to our own servers and may include error-message text from underlying services that, in rare cases, can incidentally reference your email.</li>
     </ul>
 
     <h3>3.e What we do NOT collect</h3>
@@ -211,9 +217,10 @@
     <ul>
       <li>Card numbers, expiration dates, CVCs, or any other payment-card data. All payments are handled directly by Stripe; card details are entered into Stripe's payment sheet and never touch BJG or OTS systems. We see only an opaque payment identifier and a confirmation that the charge succeeded.</li>
       <li>Your location (GPS, Wi-Fi, or otherwise). The app does not request location permissions.</li>
-      <li>Contact-list, photo-library, microphone, or camera data. The app does not request access to any of these.</li>
+      <li>Contact-list, photo-library, or microphone data. The app does not request access to any of these.</li>
+      <li>Camera images. The app may ask for camera access <strong>only</strong> if you choose to scan a payment card during checkout — this is handled entirely inside Stripe's payment sheet to read the card number; no image is stored or sent to BJG or OTS, and you can decline and type the card instead. The app does not otherwise use the camera (the dispensing QR code is generated on-screen, not scanned).</li>
       <li>Behavioral / advertising trackers. The app contains no third-party analytics SDKs or advertising SDKs.</li>
-      <li>Children's information. The app is intended for adult Ranch Pass members; we do not knowingly collect information from anyone under 13. If you believe a minor has created an account, contact us at the email above and we will remove it.</li>
+      <li>Children's information. The app is intended for adult Ranch Pass members; we do not knowingly collect information from anyone under 18. If you believe a minor has created an account, contact us at the email above and we will remove it.</li>
     </ul>
 
     <h2>4. How we use your information</h2>
@@ -227,16 +234,7 @@
     </ul>
     <p>We do not sell your personal information. We do not use your information for advertising purposes. We do not share your information with marketers.</p>
 
-    <h2>5. Legal basis for processing (EU/UK readers)</h2>
-    <p>Where the EU/UK General Data Protection Regulation applies, we rely on:</p>
-    <ul>
-      <li><strong>Performance of a contract</strong> — to provide the app's purchase, PIN, and stats functionality you signed up for.</li>
-      <li><strong>Legitimate interests</strong> — to detect abuse, diagnose errors, and run the service securely. These interests do not override your fundamental rights.</li>
-      <li><strong>Consent</strong> — for any future feature that explicitly asks for it (none in V1).</li>
-      <li><strong>Legal obligation</strong> — for tax, accounting, or law-enforcement compliance.</li>
-    </ul>
-
-    <h2>6. Who we share your information with</h2>
+    <h2>5. Who we share your information with</h2>
     <p>We share your information only with the third parties listed below, and only to the extent needed for them to perform their function. We have data-processing agreements (or equivalent contractual protections) in place with each.</p>
 
     <table>
@@ -261,17 +259,12 @@
         <tr>
           <td><strong>SelectPi</strong> (operator of the ball-dispensing kiosks)</td>
           <td>PIN code issuance and redemption</td>
-          <td>Transaction ID, ball count, price, expiration window</td>
+          <td>A user identifier, ball count, and bucket price, used to generate and look up your dispensing PIN</td>
         </tr>
         <tr>
           <td><strong>Snowflake</strong> + <strong>Airbyte</strong></td>
           <td>BJG's existing data warehouse and the sync that mirrors membership data into the app database</td>
           <td>Membership status, member-since date, name</td>
-        </tr>
-        <tr>
-          <td><strong>Sentry</strong> (Functional Software, Inc.)</td>
-          <td>Crash and error reporting</td>
-          <td>Stack traces, high-level device metadata</td>
         </tr>
         <tr>
           <td><strong>AWS</strong> (Amazon Web Services, Inc.)</td>
@@ -280,7 +273,7 @@
         </tr>
         <tr>
           <td><strong>HubSpot</strong> (HubSpot, Inc.)</td>
-          <td>BJG's customer relationship management and marketing operations platform; app member data is synced into HubSpot so BJG can manage member communications and lifecycle outreach</td>
+          <td>BJG's customer relationship management and marketing operations platform; member data is synced into HubSpot from BJG's data warehouse so BJG can manage member communications and lifecycle outreach</td>
           <td>Name, email, membership status, tier, aggregate spend</td>
         </tr>
       </tbody>
@@ -288,60 +281,65 @@
 
     <p>We do not share your information with any other third parties except as required by law (subpoenas, court orders) or to protect the rights, property, or safety of BJG, our users, or others.</p>
 
-    <h2>7. Where your data is stored</h2>
+    <h2>6. Where your data is stored</h2>
     <p>Application data is stored in <code>us-east-1</code> (Virginia, USA). By using the app, you consent to your data being processed in the United States, including by service providers operating there.</p>
 
-    <h2>8. How long we keep your data</h2>
+    <h2>7. How long we keep your data</h2>
+    <p>We keep personal information only as long as needed for the purposes in this policy, then delete or de-identify it.</p>
     <ul>
-      <li><strong>Account data</strong> (email, profile) — for as long as your account is active. If you delete your account, we delete or anonymize this data within 30 days, except where retention is required by law or for ongoing fraud-prevention review.</li>
-      <li><strong>Transaction history</strong> — retained for <span class="todo">7 years</span>.</li>
-      <li><strong>Crash and error logs</strong> — 90 days, then deleted.</li>
+      <li><strong>Account data</strong> (email, profile) — for as long as your account is active. If you delete your account, we delete or anonymize this data within 30 days, except where retention is required by law or for ongoing fraud-prevention review. You can delete your account in-app (Profile → Delete Account) or by contacting us at the email in §1.</li>
+      <li><strong>Purchase and PIN records</strong> — kept while your account is active. When you delete your account, we remove the personal identifiers from these records and retain the resulting de-identified transaction data indefinitely for financial, tax, and business record-keeping. Because that data can no longer be linked to you, it is no longer personal information.</li>
+      <li><strong>Loyalty stats</strong> — derived from your purchase records and kept on the same basis; de-identified once the underlying records are anonymized.</li>
+      <li><strong>Product-analytics events</strong> — personal identifiers are removed when you delete your account; de-identified, first-party event data may be retained to improve the app.</li>
+      <li><strong>Error logs</strong> — 90 days, then deleted.</li>
       <li><strong>Authentication event logs</strong> — 90 days, then deleted.</li>
     </ul>
 
-    <h2>9. Security</h2>
+    <h2>8. Security</h2>
     <p>We use industry-standard measures to protect your data:</p>
     <ul>
       <li>All traffic between the app and our servers is encrypted in transit (TLS 1.2+).</li>
       <li>Data at rest is encrypted using AES-256.</li>
       <li>Authentication tokens are stored in your device's secure keychain (iOS Keychain / Android EncryptedSharedPreferences), never in plain storage.</li>
       <li>Passwords are hashed with bcrypt by our identity provider; we never see your password in plaintext.</li>
-      <li>Access to production data inside BJG and OTS is restricted to the engineers who need it, with audit logs on every access.</li>
+      <li>Optional app-unlock uses your device's built-in Face ID / Touch ID (or Android biometric) through the operating system. Biometric matching happens entirely on your device; BJG and OTS never receive, see, or store your biometric data.</li>
+      <li>Access to production data inside BJG and OTS is restricted to authorized engineers who need it, and such access is logged.</li>
     </ul>
     <p>No system is perfectly secure; if a breach affecting your information ever occurs, we will notify you in line with applicable law.</p>
 
-    <h2>10. Your rights</h2>
-    <p>Depending on where you live, you may have some or all of the following rights regarding your personal information:</p>
+    <h2>9. Your US state privacy rights</h2>
+    <p>The app is offered only to US residents. Depending on the state you live in, you may have some or all of the following rights regarding your personal information:</p>
     <ul>
-      <li><strong>Access</strong> — get a copy of the data we hold about you.</li>
-      <li><strong>Correction</strong> — fix data that's wrong (most fields can be corrected through the app's Profile tab; for membership-system fields, contact BJG directly).</li>
-      <li><strong>Deletion</strong> — delete your account and associated data.</li>
-      <li><strong>Portability</strong> — receive a machine-readable export.</li>
-      <li><strong>Objection / restriction</strong> — object to certain processing or ask us to limit it.</li>
-      <li><strong>Withdraw consent</strong> — where we rely on consent (none in V1), withdraw it at any time.</li>
+      <li><strong>Know / access</strong> — get a copy of, or details about, the personal information we hold about you.</li>
+      <li><strong>Correction</strong> — fix data that's wrong. The V1 app does not yet support editing your profile in-app, so to correct any information (including name and membership details, which come from BJG's membership system) contact us at the email in §1 or your home site's front desk.</li>
+      <li><strong>Deletion</strong> — delete your account and associated data, in-app (Profile → Delete Account) or by contacting us at the email in §1.</li>
+      <li><strong>Portability</strong> — get a copy of your data in a portable format. The V1 app has no self-serve export, so we fulfill these requests manually within the response window below.</li>
+      <li><strong>Opt out of sale, sharing, or targeted advertising</strong> — we do not sell or share your personal information and do not use it for targeted advertising, so there is nothing to opt out of.</li>
+      <li><strong>Limit use of sensitive personal information</strong> — we do not use sensitive personal information beyond what is needed to provide the service.</li>
+      <li><strong>Appeal</strong> — if we deny a rights request, you may appeal by replying to our decision or emailing the address in §1; we will respond within the period your state's law requires.</li>
+      <li><strong>Non-discrimination</strong> — we will not discriminate against you for exercising any of these rights.</li>
     </ul>
-    <p>To exercise any of these rights, email us at the address in §1. We respond within 30 days. We may need to verify your identity before acting on the request.</p>
-    <p>If you live in the EU/UK, you also have the right to lodge a complaint with your local data-protection authority (e.g. the UK ICO, Ireland's DPC).</p>
-    <p>If you live in California, the CCPA/CPRA gives you these same rights (under different names) and additionally the right not to be discriminated against for exercising them. We do not sell or share personal information for cross-context behavioral advertising.</p>
+    <p>To exercise any of these rights, email us at the address in §1 (for deletion, you can also use the in-app option above). We respond within 45 days, with one extension where the law permits, and may need to verify your identity before acting on the request.</p>
+    <p><strong>California residents (CCPA/CPRA).</strong> You have the rights above under their statutory names, including the right to know the categories and specific pieces of personal information we collect, the categories of sources and of third parties we share with, and the business or commercial purpose. The personal information we collect falls under the CCPA categories of identifiers (e.g. email, user ID), customer records (name), commercial information (purchase history), and internet or other electronic activity (app usage). We do not sell or share personal information for cross-context behavioral advertising, and we do not use sensitive personal information for purposes that would trigger the right to limit.</p>
 
-    <h2>11. Children</h2>
-    <p>The app is intended for adult Ranch Pass members. We do not knowingly collect personal information from anyone under 13. If you believe a child under 13 has created an account, contact us and we will delete it.</p>
+    <h2>10. Children</h2>
+    <p>The app is intended for adult Ranch Pass members. We do not knowingly collect personal information from anyone under 18. If you believe a minor under 18 has created an account, contact us and we will delete it.</p>
 
-    <h2>12. Changes to this policy</h2>
+    <h2>11. Changes to this policy</h2>
     <p>If we make material changes to this policy, we'll notify you in the app and update the "Last updated" date at the top. Continuing to use the app after a change means you accept the updated policy. The previous version of this policy is available on request.</p>
 
-    <h2>13. Contact</h2>
+    <h2>12. Contact</h2>
     <p>[Repeated from §1 for findability]</p>
     <div class="contact-block">
       <ul>
-        <li>Email: appsupport@golfranch.com</li>
-        <li>Mail: 3333 Lee Parkway, Suite 460, Dallas, TX 75219, USA</span></li>
+        <li>Email: accounts@golfranchusa.com</li>
+        <li>Mail: 633 West Davis Street, Dallas, TX 75208</li>
       </ul>
     </div>
   </main>
 
   <footer>
-    Golf Ranch App — Privacy Policy — DRAFT, last updated 2026-06-01
+    Golf Ranch App — Privacy Policy — DRAFT, last updated 2026-06-02
   </footer>
 
 </body>
