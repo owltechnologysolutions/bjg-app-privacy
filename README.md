@@ -17,7 +17,7 @@ The GitHub Pages URL produced by this repo (`https://owltechnologysolutions.gith
 
 The drafting source-of-truth was `bjg-app-claude/docs/privacy-policy.md`; that file has been replaced with a pointer to this repo. Future edits should land **here**, in `index.html`, and the markdown should **not** diverge.
 
-For the **Terms of Service** (`terms/index.html`), the drafting source-of-truth is `bjg-app-claude/docs/terms-of-service.md`. Keep the two in sync — substantive edits land in that markdown first, then get reflected in `terms/index.html`. The internal "For BJG legal" callout and the "why these clauses are required / other Apple guidelines" developer notes in the markdown are intentionally **not** published; the binding Apple/Google store clauses **are**. The ToS page still carries a yellow **DRAFT** banner (it has not yet been audited by counsel like the privacy policy has) — remove it (search for the `TODO` near the top of `terms/index.html`) only once BJG counsel approves.
+For the **Terms of Service** (`terms/index.html`), the drafting source-of-truth is `bjg-app-claude/docs/terms-of-service.md`. Keep the two in sync — substantive edits land in that markdown first, then get reflected in `terms/index.html`. The internal "For BJG legal" callout and the "why these clauses are required / other Apple guidelines" developer notes in the markdown are intentionally **not** published; the binding Apple/Google store clauses **are**.
 
 ## Contents
 
