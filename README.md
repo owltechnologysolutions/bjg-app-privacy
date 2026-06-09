@@ -1,14 +1,23 @@
 # bjg-app-privacy
 
-Public privacy policy site for the **Golf Ranch App**, published by **Blue Jeans Golf** (BJG). Owl Technology Solutions (OTS) maintains this repo on BJG's behalf. BJG is the data controller; OTS is the vendor.
+Public legal-document site for the **Golf Ranch App**, published by **Blue Jeans Golf** (BJG). Owl Technology Solutions (OTS) maintains this repo on BJG's behalf. BJG is the data controller; OTS is the vendor.
 
-This repo serves a single static page (`index.html`). The canonical, production privacy-policy URL is set by BJG — most likely **`https://bluejeansgolf.com/privacy`**. Confirm with BJG before pasting any URL into the Google Play Console or Apple App Store Connect Privacy form.
+This repo serves two static pages:
+
+| Path | Page | Staging URL |
+| ---- | ---- | ----------- |
+| `index.html` | Privacy Policy | `https://owltechnologysolutions.github.io/bjg-app-privacy/` |
+| `terms/index.html` | Terms of Service | `https://owltechnologysolutions.github.io/bjg-app-privacy/terms/` |
+
+The canonical, production URLs are set by BJG — most likely **`https://bluejeansgolf.com/privacy`** and **`https://bluejeansgolf.com/terms`**. Confirm with BJG before pasting any URL into the Google Play Console or Apple App Store Connect forms.
 
 The GitHub Pages URL produced by this repo (`https://owltechnologysolutions.github.io/bjg-app-privacy/`) is a **staging / preview** for OTS-side testing and lawyer review only. It should **not** be the URL submitted to the stores in production.
 
 ## Source of truth
 
 The drafting source-of-truth was `bjg-app-claude/docs/privacy-policy.md`; that file has been replaced with a pointer to this repo. Future edits should land **here**, in `index.html`, and the markdown should **not** diverge.
+
+For the **Terms of Service** (`terms/index.html`), the drafting source-of-truth is `bjg-app-claude/docs/terms-of-service.md`. Keep the two in sync — substantive edits land in that markdown first, then get reflected in `terms/index.html`. The internal "For BJG legal" callout and the "why these clauses are required / other Apple guidelines" developer notes in the markdown are intentionally **not** published; the binding Apple/Google store clauses **are**. The ToS page still carries a yellow **DRAFT** banner (it has not yet been audited by counsel like the privacy policy has) — remove it (search for the `TODO` near the top of `terms/index.html`) only once BJG counsel approves.
 
 ## Contents
 
